@@ -47,7 +47,7 @@ jobs:
         run: |
           mkdir test
           cd test
-          tar xzf nanopb/dist/*.tar.gz
+          tar xzf ../nanopb/dist/*.tar.gz
           cd */tests
           python3 -m SCons
 
