@@ -23,6 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install python3-protobuf protobuf-compiler scons
           python3 -m pip install --user --upgrade scons protobuf grpcio-tools pyinstaller
           python3 -c 'import google.protobuf; print(google.protobuf.__file__)'
 
