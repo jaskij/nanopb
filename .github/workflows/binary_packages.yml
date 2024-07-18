@@ -20,11 +20,13 @@ jobs:
         with:
           path: nanopb
           fetch-depth: "0"
-
-      - name: Install dependencies
+          
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.8'
+
+      - name: Install dependencies
         run: |
           python3 -m pip install --user --upgrade scons protobuf grpcio-tools pyinstaller
           python3 -c 'import google.protobuf; print(google.protobuf.__file__)'
