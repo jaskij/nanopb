@@ -45,13 +45,15 @@ jobs:
 
       - name: Test binary package
         run: |
+          mkdir test
+          cd test
           tar xzf nanopb/dist/*.tar.gz
-          cd nanopb-*/tests
+          cd */tests
           python3 -m SCons
 
       - name: Test examples
         run: |
-          cd nanopb-*/examples
+          cd test/*/examples
           (cd simple; make; ./simple)
           (cd network_server; make)
           (cd using_union_messages; make)
